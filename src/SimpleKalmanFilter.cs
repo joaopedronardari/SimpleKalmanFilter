@@ -15,7 +15,7 @@ namespace SimpleKalmanFilterApplication
         private void MeasurementUpdate()
         {
             K = (P + Q) / (P + Q + R);
-            P = R * (P + Q) / (R + P + Q);
+            P = R * K;
         }
 
         public double Update(double measurement)
